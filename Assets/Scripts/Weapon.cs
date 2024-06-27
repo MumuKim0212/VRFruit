@@ -17,7 +17,8 @@ public class Weapon : MonoBehaviour
     }
     private void Update()
     {
-    RaycastHit hit;
+        RaycastHit hit;
+        if(Input.GetMouseButton(0) || Input.GetMouseButton(2))
         if (Physics.Raycast(transform.position, transform.forward,
                            out hit, 5))
         {
