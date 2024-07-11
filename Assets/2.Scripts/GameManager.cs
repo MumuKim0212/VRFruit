@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeWeapon()
     {
-        OpenMenu(menu);
+        CloseMenu(menu);
         weaponPool.SetActive(true);
         for (int i = 0; i < 21; i++)
             weaponPool.transform.position += Vector3.up;
@@ -101,7 +101,9 @@ public class GameManager : MonoBehaviour
             weaponPool.transform.position -= Vector3.up;
         changeWeaponClose.SetActive(false);
         weaponPool.SetActive(false);
+        OpenMenu(menu);
     }
+
 
     public void PlaySound(AudioClip clip)
     {

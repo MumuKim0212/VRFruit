@@ -9,4 +9,12 @@ public class GameSceneManager : MonoBehaviour
     {
         GameManager.Instance.OpenMenu(menu);
     }
+    public void ExitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

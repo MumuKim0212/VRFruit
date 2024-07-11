@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public static int score;
     public Text textScore;
     AudioSource audioSource;
-
+            
     private void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward,
-                           out hit, 5))
+                           out hit, 10))
         {
             Destroy(hit.transform.gameObject);
             Instantiate(effect, hit.point, Quaternion.LookRotation(hit.normal));
